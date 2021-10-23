@@ -2,28 +2,36 @@
 
 // Добавь классу следующий функционал:
 
-// Геттер value - возвращает текущее значение поля _value
+// + Геттер value - возвращает текущее значение поля _value
 // Метод append(str) - получает парметр str (строку) и добавляет ее в конец _value
 // Метод prepend(str) - получает парметр str (строку) и добавляет ее в начало value
 // Метод pad(str) - получает парметр str (строку) и добавляет ее в начало и в конец _value
 
 //my code
-const StringBuilder = function (_value) {
-  this.value = _value;
-};
+class StringBuilder {
+  constructor(value) {
+    this._value = value;
+  }
 
-StringBuilder.prototype.append = function (str) {
-  this.value = this.value + str;
-};
+  get value() {
+    return this._value;
+  }
+  set value(newValue) {
+    this._value = newValue;
+  }
 
-StringBuilder.prototype.prepend = function (str) {
-  this.value = str + this.value;
-};
+  append(str) {
+    this.value = this.value + str;
+  }
 
-StringBuilder.prototype.pad = function (str) {
-  this.value = str + this.value + str;
-};
+  prepend(str) {
+    this.value = str + this.value;
+  }
 
+  pad(str) {
+    this.value = str + this.value + str;
+  }
+}
 // ..
 
 const builder = new StringBuilder('.');
