@@ -6,24 +6,26 @@
 // addItem(item) - получает новый товар и добавляет его к текущим
 // removeItem(item) - получет товар и, если он есть, удаляет его из текущих
 
-const Storage = function ([...items]) {
-  this.items = items;
-};
-
-Storage.prototype.getItems = function () {
-  return this.items;
-};
-
-Storage.prototype.addItem = function (item) {
-  this.items.push(item);
-};
-
-Storage.prototype.removeItem = function (item) {
-  if (this.items.includes(item)) {
-    const deleteIndex = this.items.indexOf(item);
-    this.items.splice(deleteIndex, 1);
+class Storage {
+  constructor([...items]) {
+    this.items = items;
   }
-};
+
+  getItems() {
+    return this.items;
+  }
+
+  addItem(item) {
+    this.items.push(item);
+  }
+
+  removeItem(item) {
+    if (this.items.includes(item)) {
+      const deleteIndex = this.items.indexOf(item);
+      this.items.splice(deleteIndex, 1);
+    }
+  }
+}
 //
 
 const storage = new Storage([
