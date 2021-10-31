@@ -6,11 +6,13 @@ class Car {
    */
 
   static getSpecs(car) {
-    console.log(`Максимальна швидкість: ${car.maxSpeed} ,
-     Швидкість поточна: ${car.speed},
-     Мотор заведений: ${car.isOn},
-     Пробіг автомобіля: ${car.distance}
-     Ціна: ${car.price}`);
+    console.log(
+      `maxSpeed: ${car.maxSpeed},
+speed: ${car.speed},
+isOn: ${car.isOn},
+distance: ${car.distance}
+price: ${car.price}`
+    );
   }
 
   /*
@@ -24,7 +26,8 @@ class Car {
    *  distance - общий киллометраж, изначально 0
    */
 
-  constructor(speed = 0, price, maxSpeed, isOn = false, distance = 0) {
+  constructor({ speed = 0, price, maxSpeed, isOn = false, distance = 0 }) {
+    // ! Додав {}
     this.speed = speed;
     this._price = price;
     this.maxSpeed = maxSpeed;
